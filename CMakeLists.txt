@@ -20,7 +20,7 @@ list(APPEND PLUGIN_INCLUDES
 			${PLUGIN_DIR}/src
 )
 
-add_subdirectory(${PLUGIN_LIBS_DIR}/src/build/cmake zstd)
+add_subdirectory(${PLUGIN_LIBS_DIR}/src/zstd/build/cmake zstd)
 target_include_directories(zstd PUBLIC ${PLUGIN_LIBS_DIR}/src/zstd/lib/)
 
 list(APPEND PLUGIN_LINKLIBS
