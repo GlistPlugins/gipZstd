@@ -1,6 +1,6 @@
 # gipZstd
 
-This repo contains Zstandard (zstd) for compression and decompressing data at real time.
+This repo contains Zstandard (zstd) for compressing and decompressing data at real time.
 
 # Cloning
 
