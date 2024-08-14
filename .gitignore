@@ -78,6 +78,4 @@ fabric.properties
 
 **/build/
 **/.settings/
-*.project
-*.cproject
 /_build/
