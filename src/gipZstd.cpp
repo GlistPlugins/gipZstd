@@ -6,9 +6,7 @@
 
 #include "zstd.h"
 
-namespace gipZstd {
-
-std::vector<uint8_t> compressString(const std::string& input, int compresssionLevel, bool* outSuccess) {
+std::vector<uint8_t> gipZstd::compressString(const std::string& input, int compresssionLevel, bool* outSuccess) {
 	size_t maxdistsize = ZSTD_compressBound(input.size());
 	std::vector<uint8_t> compresseddata(maxdistsize);
 
@@ -30,7 +28,7 @@ std::vector<uint8_t> compressString(const std::string& input, int compresssionLe
 	return compresseddata;
 }
 
-std::string decompressString(const std::vector<uint8_t>& compresseddata, size_t originalSize, bool* outSuccess) {
+std::string gipZstd::decompressString(const std::vector<uint8_t>& compresseddata, size_t originalSize, bool* outSuccess) {
 	std::vector<uint8_t> decompresseddata(originalSize);
 
 	size_t decompressedsize = ZSTD_decompress(
@@ -47,6 +45,4 @@ std::string decompressString(const std::vector<uint8_t>& compresseddata, size_t 
 
 	if (outSuccess) *outSuccess = true;
 	return {decompresseddata.begin(), decompresseddata.end()};
-}
-
 }
