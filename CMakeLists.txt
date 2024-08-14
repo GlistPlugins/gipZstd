@@ -6,7 +6,7 @@ set(pluginname gipZstd)
 
 ##### PLUGIN PATHS #####
 set(PLUGIN_DIR ${PLUGINS_DIR}/${pluginname})
-set(VENDOR_DIR ${PLUGIN_DIR}/vendor)
+set(PLUGIN_LIBS_DIR ${PLUGIN_DIR}/libs)
 
 
 ##### PLUGIN SOURCES #####
@@ -20,8 +20,8 @@ list(APPEND PLUGIN_INCLUDES
 			${PLUGIN_DIR}/src
 )
 
-add_subdirectory(${VENDOR_DIR}/zstd/build/cmake zstd)
-target_include_directories(zstd PUBLIC ${VENDOR_DIR}/zstd/lib/)
+add_subdirectory(${PLUGIN_LIBS_DIR}/src/build/cmake zstd)
+target_include_directories(zstd PUBLIC ${PLUGIN_LIBS_DIR}/src/zstd/lib/)
 
 list(APPEND PLUGIN_LINKLIBS
 		libzstd_static
